@@ -1,15 +1,38 @@
-// Update this page (the content is just a fallback if you fail and example)
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+
+  const handleClick = () => {
+    toast({
+      title: "Hello, World!",
+      description: "This is a toast notification.",
+    });
+  };
+
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      {/* Update with components here - default to put new layout sections as separate components in the components folder, and import them here */}
-      <div>
-        <h1 className="text-3xl text-center">Your Blank Canvas</h1>
-        <p className="text-center">
-          Chat with the agent to start making edits.
-        </p>
-      </div>
+      <Card className="w-[400px]">
+        <CardHeader>
+          <CardTitle className="text-center">Welcome to Your App</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" placeholder="Enter your name" />
+            </div>
+            <Button onClick={handleClick} className="w-full">
+              Submit
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
