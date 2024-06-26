@@ -27,6 +27,14 @@ const Index = () => {
               <Label htmlFor="name">Name</Label>
               <Input id="name" placeholder="Enter your name" />
             </div>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" placeholder="Enter your email" />
+            </div>
+            <div>
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" type="password" placeholder="Enter your password" />
+            </div>
             <Button onClick={handleClick} className="w-full">
               Submit
             </Button>
